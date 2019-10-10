@@ -2,6 +2,8 @@
 $ch = curl_init();
 session_start();
 $token = $_SESSION["token"];
+$sSigla = $_POST["est_sigla"];
+$sNome  = $_POST["nome"];
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Authorization: Bearer ' . $token,
@@ -9,8 +11,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'x-li-format: json'
 ]);
 curl_setopt($ch, CURLOPT_POSTFIELDS , json_encode([
-    'est_sigla' => 'SC',
-    'nome' => 'novo'
+    'est_sigla' => $sSigla,
+    'nome' => $sNome
 ]));
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 curl_setopt($ch, CURLOPT_URL, "http://localhost:3333/estados");

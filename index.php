@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTcwMTQyNjI4LCJleHAiOjE1NzA3NDc0Mjh9.PVHPaGU161aDiPMPgt3VsM-kR1rERyO1B_En2wMdhDY";
+    $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTcwNzQ3MDE2LCJleHAiOjE1NzEzNTE4MTZ9.-Ltsym67eQCBLKCa7a5NCZbcBNo3FI1j5NqgxqDb3Qk";
     $_SESSION["token"] = $token;
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,6 @@
     <title>Menu</title>
 </head>
 <body>
-    <button><a href="http://localhost/clientWebService/get.php">Listar Estado</a></button>
+    <button><a href="http://localhost/clientWebSevicePHP/getEstado.php">Listar Estado</a></button>
 </body>
 </html>
