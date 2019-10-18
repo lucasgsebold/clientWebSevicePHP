@@ -20,4 +20,5 @@ curl_close($ch);
 $result = json_decode($result, true);
 
 echo $result;
+header('Location: ../getEstado.php');
 ?>
