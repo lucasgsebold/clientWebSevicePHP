@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTcxMzUxOTYyLCJleHAiOjE1NzE5NTY3NjJ9.b89eYDpIz9kMy7J_fbuUgjb-4V6o0dgEmf7LFzQWaLo";
+    $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTcxOTU2OTY5LCJleHAiOjE1NzI1NjE3Njl9.4GL-Yn2mUG408N30-yhW-O7aKMnLOzz4S-OjO7xVNyA";
     $_SESSION["token"] = $token;
 ?>
 <!DOCTYPE html>
@@ -18,11 +18,12 @@
 <body>
     <div class='container'>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/index.php">Menu</a>
+            <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/index.php">ConFin</a>
             <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/Estado/getEstado.php">Listar Estados</a>
             <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/Cidade/getCidade.php">Listar Cidades</a>
             <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/Pessoa/getPessoa.php">Listar Pessoas</a>
             <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/Conta/getConta.php">Listar Contas</a>
+            <a class="navbar-brand" href="http://localhost/clientWebSevicePHP/loginUsuario.php">Logout</a>
         </nav>
     </div>
 </body>

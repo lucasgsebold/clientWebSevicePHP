@@ -24,16 +24,20 @@ curl_close($ch);
 $aContas = json_decode($result);
 
 
-$html ="<h2>Contas</h2>
-        <table>
+$html ="<div class='container'>
+        <h2>Contas</h2>
+        <table class='table table-hover'>
+        <thead class='thead-light'>
           <tr>
-            <td>Número</td>
-            <td>Descrição</td>
-            <td>Data</td>
-            <td>Valor</td>
-            <td>Tipo</td>
-            <td>Situação</td>
-            <td>Pessoa</td>";
+            <th>Número</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Situação</th>
+            <th>Pessoa</th>
+        </tr>
+        </thead>";
         foreach($aContas as $oConta) {
             $sNomePessoa = $oConta->pessoa->nome;
             $iCodigoPessoa = $oConta->pessoa->pes_codigo;
@@ -45,14 +49,15 @@ $html ="<h2>Contas</h2>
             $html .= "<td>$oConta->tipo</td>";
             $html .= "<td>$oConta->situacao</td>";
             $html .= "<td>$sNomePessoa</td>";
-            $html .= "<td><button><a href='http://localhost/clientWebSevicePHP/Conta/alterarConta.php?codigo=$oConta->cnt_numero&&descricao=$oConta->descricao&&data=$oConta->data&&valor=$oConta->valor&&tipo=$oConta->tipo&&situacao=$oConta->situacao&&pessoa=$iCodigoPessoa'>Alterar</a></button></td>";
-            $html .= "<td><button><a href='http://localhost/clientWebSevicePHP/Conta/deleteConta.php/?codigo=$oConta->cnt_numero'>Excluir</a></button></td>";
+            $html .= "<td><button class='btn btn-outline-primary'><a href='http://localhost/clientWebSevicePHP/Conta/alterarConta.php?codigo=$oConta->cnt_numero&&descricao=$oConta->descricao&&data=$oConta->data&&valor=$oConta->valor&&tipo=$oConta->tipo&&situacao=$oConta->situacao&&pessoa=$iCodigoPessoa'>Alterar</a></button></td>";
+            $html .= "<td><button class='btn btn-outline-primary'><a href='http://localhost/clientWebSevicePHP/Conta/deleteConta.php/?codigo=$oConta->cnt_numero'>Excluir</a></button></td>";
             $html .= "</tr>";
         }
 $html .=" </tr>
        </table>
-       <button><a href='http://localhost/clientWebSevicePHP/Conta/cadastrarConta.php'>Incluir</a></button>
-       <button><a href='http://localhost/clientWebSevicePHP/index.php'>Voltar</a></button>";
+       <button class='btn btn-outline-primary'><a href='http://localhost/clientWebSevicePHP/Conta/cadastrarConta.php'>Incluir</a></button>
+       <button class='btn btn-outline-primary'><a href='http://localhost/clientWebSevicePHP/index.php'>Voltar</a></button>
+       </div>";
 
 echo $html;
 ?>
